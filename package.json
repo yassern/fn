@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --no-cache"
   },
   "keywords": [],
   "author": "yasser nascimento <yassern@protonmail.com>",
@@ -12,6 +12,10 @@
     "ramda": "^0.27.0"
   },
   "devDependencies": {
-    "@types/ramda": "github:types/npm-ramda#dist"
+    "@types/jest": "^25.1.4",
+    "@types/ramda": "github:types/npm-ramda#dist",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
   }
 }
