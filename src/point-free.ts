@@ -32,8 +32,7 @@ const stdGetUpdatedPerson = (person: Person): PersonWithAvatar => {
   }
 }
 
-// set returing type as any because nonsense ramda typing check
-const fnGetUpdatedPerson = (person: Person): any => {
+const fnGetUpdatedPerson = (person: Person): PersonWithAvatar => {
   const getUrlFromPerson = pipe(propOr('default', 'id'), generateUrl)
   return converge(assoc('avatar'), [getUrlFromPerson, identity])(person)
 }
