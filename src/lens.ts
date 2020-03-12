@@ -13,16 +13,16 @@ const expectedResult = {
   lastName: 'Flintstone'
 }
 
-const stdFilter = (person: Person) => {
+const stdUpperFirstName = (person: Person) => {
   const pClone = { ...person }
   pClone.firstName = pClone.firstName.toUpperCase()
   return pClone
 }
 
-const fnFilter = (person: Person) => {
+const fnUpperFirstName = (person: Person) => {
   const fLens = lensProp('firstName')
   return over(fLens, toUpper, person)
 }
 
-test('std way', () => expect(stdFilter(person)).toEqual(expectedResult))
-test('fn way', () => expect(fnFilter(person)).toEqual(expectedResult))
+test('std way', () => expect(stdUpperFirstName(person)).toEqual(expectedResult))
+test('fn way', () => expect(fnUpperFirstName(person)).toEqual(expectedResult))
