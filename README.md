@@ -1,7 +1,5 @@
 # fn
 
-## Repo to practice Functional Programming;
-
 I personally prefer to use the `pipe` function instead the tradicional `compose` (i think it makes the code more readable);
 
 For each example i am coding on both procedural (standart) and functional ways;

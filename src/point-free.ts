@@ -25,10 +25,9 @@ const incompletePerson: Person = {
 const generateUrl = id => `https://img.socialnetwork.com/avatar/${id}.png`
 
 const stdGetUpdatedPerson = (person: Person): PersonWithAvatar => {
-  const { id } = person
   return {
     ...person,
-    avatar: generateUrl(id || 'default')
+    avatar: generateUrl(person.id ?? 'default')
   }
 }
 
