@@ -5,24 +5,19 @@ type Person = { firstName: string; lastName: string }
 
 const person: Person = {
   firstName: 'Fred',
-  lastName: 'Flintstone'
+  lastName: 'Flintstone',
 }
 
 const expectedResult = {
   firstName: 'FRED',
-  lastName: 'Flintstone'
+  lastName: 'Flintstone',
 }
 
 const stdUpperFirstName = (person: Person) => {
-  const pClone = { ...person }
-  pClone.firstName = pClone.firstName.toUpperCase()
-  return pClone
+  return { ...person, firstName: person.firstName.toUpperCase() }
 }
 
-const fnUpperFirstName = (person: Person) => {
-  const fLens = lensProp('firstName')
-  return over(fLens, toUpper, person)
-}
+const fnUpperFirstName = over(lensProp('firstName'), toUpper)
 
 test('std way', () => expect(stdUpperFirstName(person)).toEqual(expectedResult))
 test('fn way', () => expect(fnUpperFirstName(person)).toEqual(expectedResult))

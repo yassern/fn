@@ -9,7 +9,7 @@ const promise = Promise.all([getName(), getHobbies()])
 
 const expectedResult = {
   name: 'Andrew',
-  hobbies: ['kayaking', 'woodworking', 'screencasting']
+  hobbies: ['kayaking', 'woodworking', 'screencasting'],
 }
 
 const stdConvertToObj = async promise => {

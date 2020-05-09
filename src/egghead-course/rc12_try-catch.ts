@@ -1,12 +1,12 @@
 // lesson twelve of egghead's ramda course
-import { propOr, prop, toUpper, tryCatch, pipe, always } from 'ramda'
+import { always, pipe, prop, toUpper, tryCatch } from 'ramda'
 
 type Person = {
   name: string
 }
 
 const person: Person = {
-  name: 'Sally Jones'
+  name: 'Sally Jones',
 }
 
 const expectedPerson = 'SALLY JONES'

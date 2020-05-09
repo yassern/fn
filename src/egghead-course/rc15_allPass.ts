@@ -1,5 +1,5 @@
 // lesson fifteen of egghead's ramda course
-import { filter, propSatisfies, lte, propEq, allPass } from 'ramda'
+import { allPass, filter, lte, propEq, propSatisfies } from 'ramda'
 
 type Car = {
   name: string
@@ -11,36 +11,36 @@ const cars: Car[] = [
   {
     name: 'suv',
     doors: 4,
-    mpg: 19
+    mpg: 19,
   },
   {
     name: 'sedan',
     doors: 4,
-    mpg: 30
+    mpg: 30,
   },
   {
     name: 'hybrid',
     doors: 4,
-    mpg: 37
+    mpg: 37,
   },
   {
     name: 'compact',
     doors: 2,
-    mpg: 32
-  }
+    mpg: 32,
+  },
 ]
 
 const expectedResult: Car[] = [
   {
     name: 'sedan',
     doors: 4,
-    mpg: 30
+    mpg: 30,
   },
   {
     name: 'hybrid',
     doors: 4,
-    mpg: 37
-  }
+    mpg: 37,
+  },
 ]
 
 const stdFilter = (cars: Car[]) =>

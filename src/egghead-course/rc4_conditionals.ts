@@ -1,5 +1,5 @@
 // lesson four of egghead's ramda course
-import { map, cond, propEq, T, identity, over, lensProp, curry } from 'ramda'
+import { cond, curry, identity, lensProp, map, over, propEq, T } from 'ramda'
 
 type Product = { name: string; price: number; category: string }
 type Products = Product[]
@@ -8,14 +8,14 @@ const products: Products = [
   { name: 'Jeans', price: 80, category: 'clothes' },
   { name: 'Cards', price: 5, category: 'games' },
   { name: 'iPhone', price: 649, category: 'electronics' },
-  { name: 'Freakonomics', price: 30, category: 'books' }
+  { name: 'Freakonomics', price: 30, category: 'books' },
 ]
 
 const expectedResult: Products = [
   { name: 'Jeans', price: 40, category: 'clothes' },
   { name: 'Cards', price: 5, category: 'games' },
   { name: 'iPhone', price: 584.1, category: 'electronics' },
-  { name: 'Freakonomics', price: 0, category: 'books' }
+  { name: 'Freakonomics', price: 0, category: 'books' },
 ]
 
 const apply = (perc: number, amt: number) => amt - amt * (perc / 100)
@@ -57,7 +57,7 @@ const fnApplyDiscounts = (products: Products) => {
     [propEq('category', 'clothes'), applyDiscount(50)],
     [propEq('category', 'electronics'), applyDiscount(10)],
     [propEq('category', 'books'), applyDiscount(100)],
-    [T, identity]
+    [T, identity],
   ])
   return map(adjustPrice, products)
 }

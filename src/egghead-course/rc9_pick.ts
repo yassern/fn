@@ -1,5 +1,5 @@
 // lesson nine of egghead's ramda course
-import { pickBy, includes } from 'ramda'
+import { includes, pickBy } from 'ramda'
 
 type Product = {
   name: string
@@ -12,12 +12,12 @@ const product: Product = {
   name: 'widget',
   price: 10,
   shippingWeight: '2 lbs',
-  shippingCost: 2
+  shippingCost: 2,
 }
 
 const expectedResult: Partial<Product> = {
   shippingWeight: '2 lbs',
-  shippingCost: 2
+  shippingCost: 2,
 }
 
 const stdGetPartialProduct = (matchKey: string, product: Product) => {

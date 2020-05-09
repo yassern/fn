@@ -10,7 +10,7 @@ const products: Products = [
   { name: 'Jacket', price: 120, category: 'clothes' },
   { name: 'Cards', price: 35, category: 'games' },
   { name: 'iPhone', price: 649, category: 'electronics' },
-  { name: 'Sauce Pan', price: 100, category: 'housewares' }
+  { name: 'Sauce Pan', price: 100, category: 'housewares' },
 ]
 
 const expectedResult: Products = [
@@ -19,7 +19,7 @@ const expectedResult: Products = [
   { name: 'Jacket', price: 120 },
   { name: 'Cards', price: 35 },
   { name: 'iPhone', price: 649 },
-  { name: 'Sauce Pan', price: 100 }
+  { name: 'Sauce Pan', price: 100 },
 ]
 
 const stdGetNameAndPrice = (products: Products) => {

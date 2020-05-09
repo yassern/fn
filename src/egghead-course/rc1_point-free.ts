@@ -1,5 +1,5 @@
 // lesson one of egghead's ramda course
-import { propOr, assoc, converge, identity, pipe } from 'ramda'
+import { assoc, converge, identity, pipe, propOr } from 'ramda'
 
 type Person = {
   id?: number
@@ -15,11 +15,11 @@ type PersonWithAvatar = {
 
 const person: Person = {
   id: 1,
-  name: 'Joe'
+  name: 'Joe',
 }
 
 const incompletePerson: Person = {
-  name: 'Joe'
+  name: 'Joe',
 }
 
 const generateUrl = id => `https://img.socialnetwork.com/avatar/${id}.png`
@@ -27,7 +27,7 @@ const generateUrl = id => `https://img.socialnetwork.com/avatar/${id}.png`
 const stdGetUpdatedPerson = (person: Person): PersonWithAvatar => {
   return {
     ...person,
-    avatar: generateUrl(person.id ?? 'default')
+    avatar: generateUrl(person.id ?? 'default'),
   }
 }
 
@@ -40,12 +40,12 @@ test('std way', () => {
   expect(stdGetUpdatedPerson(person)).toEqual({
     id: 1,
     name: 'Joe',
-    avatar: 'https://img.socialnetwork.com/avatar/1.png'
+    avatar: 'https://img.socialnetwork.com/avatar/1.png',
   })
 
   expect(stdGetUpdatedPerson(incompletePerson)).toEqual({
     name: 'Joe',
-    avatar: 'https://img.socialnetwork.com/avatar/default.png'
+    avatar: 'https://img.socialnetwork.com/avatar/default.png',
   })
 })
 
@@ -53,11 +53,11 @@ test('fn way', () => {
   expect(fnGetUpdatedPerson(person)).toEqual({
     id: 1,
     name: 'Joe',
-    avatar: 'https://img.socialnetwork.com/avatar/1.png'
+    avatar: 'https://img.socialnetwork.com/avatar/1.png',
   })
 
   expect(fnGetUpdatedPerson(incompletePerson)).toEqual({
     name: 'Joe',
-    avatar: 'https://img.socialnetwork.com/avatar/default.png'
+    avatar: 'https://img.socialnetwork.com/avatar/default.png',
   })
 })

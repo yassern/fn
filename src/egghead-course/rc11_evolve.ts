@@ -1,5 +1,5 @@
 // lesson eleven of egghead's ramda course
-import { evolve, toUpper, multiply, inc } from 'ramda'
+import { evolve, inc, multiply, toUpper } from 'ramda'
 
 type Product = {
   name: string
@@ -10,13 +10,13 @@ type Product = {
 const product: Product = {
   name: 'cog',
   price: 100,
-  details: { shippingInfo: { weight: 7, method: 'ups' } }
+  details: { shippingInfo: { weight: 7, method: 'ups' } },
 }
 
 const expectedResult: Product = {
   name: 'COG',
   price: 200,
-  details: { shippingInfo: { weight: 8, method: 'ups' } }
+  details: { shippingInfo: { weight: 8, method: 'ups' } },
 }
 
 const stdGetProductEvolved = (product: Product) => {
@@ -27,8 +27,8 @@ const stdGetProductEvolved = (product: Product) => {
     name,
     price,
     details: {
-      shippingInfo: { weight }
-    }
+      shippingInfo: { weight },
+    },
   } = pClone
 
   pClone.name = name.toUpperCase()
@@ -40,7 +40,7 @@ const stdGetProductEvolved = (product: Product) => {
 const fnGetProductEvolved = evolve({
   name: toUpper,
   price: multiply(2),
-  details: { shippingInfo: { weight: inc } }
+  details: { shippingInfo: { weight: inc } },
 })
 
 test('std way', () =>

@@ -1,12 +1,12 @@
 // lesson two of egghead's ramda course
-import { pipe, tail, split, map, fromPairs } from 'ramda'
+import { fromPairs, map, pipe, split, tail } from 'ramda'
 
 const queryString = '?page=2&pageSize=10&total=203'
 
 const expectedResult = {
   page: '2',
   pageSize: '10',
-  total: '203'
+  total: '203',
 }
 
 const stdParseQs = (query: string) => {
