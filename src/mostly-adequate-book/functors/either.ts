@@ -1,19 +1,19 @@
 import { prop } from 'ramda'
 
-class Either {
+export class Either {
   constructor(public value) {}
   static of = (x: any) => new Right(x)
 }
 
-class Left extends Either {
+export class Left extends Either {
   public map = (fn: Function) => this
 }
 
-class Right extends Either {
+export class Right extends Either {
   public map = (fn: Function) => Either.of(fn(this.value))
 }
 
-const left = x => new Left(x)
+export const left = x => new Left(x)
 
 test('validate either', () => {
   let either: Either
